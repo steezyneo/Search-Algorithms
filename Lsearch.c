@@ -1,25 +1,22 @@
 #include<stdio.h>
-int lsearch(int[], int, int);
 void main(){
-	int a[10], key, i, n, pos;
-	printf("Input number of elements in array\n");
+	int a[10], target, found = 0, n, i;
+	
+	printf("Enter number of elements: ");
 	scanf("%d", &n);
-	printf("Input %d numbers\n", n);
+	printf("Enter elements in array: ");
 	for(i=0; i<n; i++)
 	scanf("%d", &a[i]);
-	printf("Input number to search\n");
-	scanf("%d", &key);
-	if(pos == -1)
-	printf("%d is not present in array\n", key);
-	else
-	printf("%d is present at location %d\n",key, pos+1);
-}
-
-int lsearch(int a[], int n, int find){
-	int i;
+	printf("Enter an element to be searched: ");
+	scanf("%d", &target);
+	
 	for(i=0; i<n; i++){
-		if(a[i] == find)
-		return i;
+		if(target == a[i]){
+			printf("Element was found at index = %d", i);
+			found = 1;
+			break;
+		}
 	}
-	return -1;
+	if(!found)
+		printf("Not found");
 }
